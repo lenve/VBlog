@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sang.mapper.ArticleMapper">
+    <insert id="addNewArticle" parameterType="org.sang.bean.Article" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO article SET title=#{title},mdContent=#{mdContent},htmlContent=#{htmlContent},summary=#{summary},cid=#{cid},uid=#{uid},publishDate=#{publishDate},state=#{state},editTime=#{editTime}
+    </insert>
+    <update id="pvIncrement" parameterType="Long">
+        UPDATE article set pageView=pageView+1 WHERE id=#{aid}
+    </update>
+    <update id="updateArticle" parameterType="org.sang.bean.Article">
+        UPDATE article SET
+        title=#{title},mdContent=#{mdContent},htmlContent=#{htmlContent},summary=#{summary},cid=#{cid},editTime=#{editTime}
+        <if test="state==1">
+            ,state=1
+        </if>
+        <if test="publishDate!=null">
+            ,publishDate=#{publishDate}
+        </if>
+        WHERE id=#{id}
+    </update>
+    <select id="getArticleByState" resultType="org.sang.bean.Article">
+        SELECT a.id,a.`title`,a.`editTime`,a.`pageView`,a.`state`,u.`nickname`,c.`cateName`,a.uid FROM article a,user
+        u,category c WHERE a.`cid`=c.`id` AND a.`uid`=u.`id`
+        <if test="state!=-2">
+            and a.uid=#{uid}
+        </if>
+        <if test="state!=-1 and state!=-2">
+            and a.state=#{state}
+        </if>
+        <if test="state==-2">
+            and a.state=1
+        </if>
+        <if test="keywords!=null">
+            AND title LIKE concat('%',#{keywords},'%')
+        </if>
+        ORDER BY a.editTime DESC limit #{start},#{count};
+    </select>
+    <select id="getArticleByStateByAdmin" resultType="org.sang.bean.Article">
+        SELECT a.id,a.`title`,a.`editTime`,a.`pageView`,a.`state`,u.`nickname`,c.`cateName`,a.uid FROM article a,user
+        u,category c WHERE a.`cid`=c.`id` AND a.`uid`=u.`id` and a.state=1
+        <if test="keywords!=null">
+            AND title LIKE concat('%',#{keywords},'%')
+        </if>
+        ORDER BY a.editTime DESC limit #{start},#{count};
+    </select>
+    <select id="getArticleCountByState" resultType="int">
+        SELECT count(*) FROM article
+        <where>
+            <if test="state!=-1">
+                AND state=#{state}
+            </if>
+            <if test="uid!=null">
+                AND uid=#{uid}
+            </if>
+            <if test="keywords!=null">
+                AND title LIKE concat('%',#{keywords},'%')
+            </if>
+        </where>
+    </select>
+    <update id="updateArticleState">
+        UPDATE article SET state=#{state} WHERE id IN
+        <foreach collection="aids" item="aid" separator="," open="(" close=")">
+            #{aid}
+        </foreach>
+    </update>
+
+    <delete id="deleteArticleById">
+        DELETE FROM article WHERE id IN
+        <foreach collection="aids" item="aid" open="(" close=")" separator=",">
+            #{aid}
+        </foreach>
+    </delete>
+    <select id="getArticleById" parameterType="Long" resultMap="BaseResultMap">
+        SELECT a.*,t.`tagName`,t.`id` AS tid,u.`nickname`,c.`cateName` FROM article a LEFT JOIN article_tags ats ON a.`id`=ats.`aid` LEFT JOIN tags t ON ats.`tid`=t.`id` LEFT JOIN user u ON a.`uid`=u.`id` LEFT JOIN category c ON a.`cid`=c.`id` WHERE a.id=#{aid}
+    </select>
+
+    <resultMap id="BaseResultMap" type="org.sang.bean.Article">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="cid" property="cid"/>
+        <result column="uid" property="uid"/>
+        <result column="publishDate" property="publishDate"/>
+        <result column="editTime" property="editTime"/>
+        <result column="state" property="state"/>
+        <result column="pageView" property="pageView"/>
+        <result column="mdContent" property="mdContent"/>
+        <result column="htmlContent" property="htmlContent"/>
+        <result column="summary" property="summary"/>
+        <result column="nickname" property="nickname"/>
+        <result column="cateName" property="cateName"/>
+        <collection property="tags" ofType="org.sang.bean.Tags" column="tagName">
+            <id property="id" column="tid"/>
+            <result property="tagName" column="tagName"/>
+        </collection>
+    </resultMap>
+
+    <insert id="pvStatisticsPerDay">
+        INSERT INTO pv(countDate,pv,uid) SELECT CURRENT_DATE(),totalPv-pv,t.`uid` FROM pvview p,totalpvview t WHERE p.`uid`=t.`uid`
+    </insert>
+
+    <select id="getCategories" resultType="String" parameterType="long">
+        SELECT countDate from pv WHERE uid=#{uid} ORDER by countDate limit 7
+    </select>
+    <select parameterType="long" id="getDataStatistics" resultType="int">
+        SELECT pv from pv WHERE uid=#{uid} ORDER by countDate limit 7
+    </select>
+</mapper>
