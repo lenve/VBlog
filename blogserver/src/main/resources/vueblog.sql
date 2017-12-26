@@ -1,15 +1,4 @@
 /*
-Navicat MySQL Data Transfer
-
-Source Server         : MyCon
-Source Server Version : 50717
-Source Host           : localhost:3306
-Source Database       : vueblog
-
-Target Server Type    : MYSQL
-Target Server Version : 50717
-File Encoding         : 65001
-
 Date: 2017-12-26 18:36:12
 */
 
