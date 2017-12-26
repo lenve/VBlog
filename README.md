@@ -6,27 +6,27 @@ V部落是一个多用户博客管理平台，采用Vue+SpringBoot开发。
 
 ## 登陆页面
 
-![登录](http://github.com/lenve/VBlog/raw/master/doc/login.png)  
+![登录](https://raw.githubusercontent.com/lenve/VBlog/master/doc/login.png)  
 
 ## 文章列表
 
-![文章列表](http://github.com/lenve/VBlog/raw/master/doc/article.png)  
+![文章列表](https://raw.githubusercontent.com/lenve/VBlog/master/doc/article.png)  
 
 ## 发表文章
 
-![发表文章](http://github.com/lenve/VBlog/raw/master/doc/post.png)  
+![发表文章](https://raw.githubusercontent.com/lenve/VBlog/master/doc/post.png)  
 
 ## 用户管理
 
-![用户管理](http://github.com/lenve/VBlog/raw/master/doc/usermana.png)  
+![用户管理](https://raw.githubusercontent.com/lenve/VBlog/master/doc/usermana.png)  
 
 ## 栏目管理
 
-![栏目管理](http://github.com/lenve/VBlog/raw/master/doc/category.png)  
+![栏目管理](https://raw.githubusercontent.com/lenve/VBlog/master/doc/category.png)  
 
 ## 数据统计
 
-![数据统计](http://github.com/lenve/VBlog/raw/master/doc/datastatistics.png)  
+![数据统计](https://raw.githubusercontent.com/lenve/VBlog/master/doc/datastatistics.png)  
 
 # 技术栈  
 
@@ -96,4 +96,4 @@ MIT
 
 关注公众号查看更多全栈资料：  
 
-![公众号二维码](http://github.com/lenve/VBlog/raw/master/doc/qrcode.png)  
+![公众号二维码](https://raw.githubusercontent.com/lenve/VBlog/master/doc/qrcode.jpg)  
