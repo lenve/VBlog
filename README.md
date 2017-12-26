@@ -1,48 +1,48 @@
-V²¿ÂäÊÇÒ»¸ö¶àÓÃ»§²©¿Í¹ÜÀíÆ½Ì¨£¬²ÉÓÃVue+SpringBoot¿ª·¢¡£  
+Véƒ¨è½æ˜¯ä¸€ä¸ªå¤šç”¨æˆ·åšå®¢ç®¡ç†å¹³å°ï¼Œé‡‡ç”¨Vue+SpringBootå¼€å‘ã€‚  
 
-ÏîÄ¿ÑİÊ¾µØÖ·£º [http://45.77.146.32:8081/index.html](http://45.77.146.32:8081/index.html)  
+é¡¹ç›®æ¼”ç¤ºåœ°å€ï¼š [http://45.77.146.32:8081/index.html](http://45.77.146.32:8081/index.html)  
 
-# ÏîÄ¿Ğ§¹ûÍ¼  
+# é¡¹ç›®æ•ˆæœå›¾  
 
-## µÇÂ½Ò³Ãæ
+## ç™»é™†é¡µé¢
 
-![µÇÂ¼](https://raw.githubusercontent.com/lenve/VBlog/master/doc/login.png)  
+![ç™»å½•](https://raw.githubusercontent.com/lenve/VBlog/master/doc/login.png)  
 
-## ÎÄÕÂÁĞ±í
+## æ–‡ç« åˆ—è¡¨
 
-![ÎÄÕÂÁĞ±í](https://raw.githubusercontent.com/lenve/VBlog/master/doc/article.png)  
+![æ–‡ç« åˆ—è¡¨](https://raw.githubusercontent.com/lenve/VBlog/master/doc/article.png)  
 
-## ·¢±íÎÄÕÂ
+## å‘è¡¨æ–‡ç« 
 
-![·¢±íÎÄÕÂ](https://raw.githubusercontent.com/lenve/VBlog/master/doc/post.png)  
+![å‘è¡¨æ–‡ç« ](https://raw.githubusercontent.com/lenve/VBlog/master/doc/post.png)  
 
-## ÓÃ»§¹ÜÀí
+## ç”¨æˆ·ç®¡ç†
 
-![ÓÃ»§¹ÜÀí](https://raw.githubusercontent.com/lenve/VBlog/master/doc/usermana.png)  
+![ç”¨æˆ·ç®¡ç†](https://raw.githubusercontent.com/lenve/VBlog/master/doc/usermana.png)  
 
-## À¸Ä¿¹ÜÀí
+## æ ç›®ç®¡ç†
 
-![À¸Ä¿¹ÜÀí](https://raw.githubusercontent.com/lenve/VBlog/master/doc/category.png)  
+![æ ç›®ç®¡ç†](https://raw.githubusercontent.com/lenve/VBlog/master/doc/category.png)  
 
-## Êı¾İÍ³¼Æ
+## æ•°æ®ç»Ÿè®¡
 
-![Êı¾İÍ³¼Æ](https://raw.githubusercontent.com/lenve/VBlog/master/doc/datastatistics.png)  
+![æ•°æ®ç»Ÿè®¡](https://raw.githubusercontent.com/lenve/VBlog/master/doc/datastatistics.png)  
 
-# ¼¼ÊõÕ»  
+# æŠ€æœ¯æ ˆ  
 
-## ºó¶Ë¼¼ÊõÕ»
+## åç«¯æŠ€æœ¯æ ˆ
 
-ºó¶ËÖ÷Òª²ÉÓÃÁË£º  
+åç«¯ä¸»è¦é‡‡ç”¨äº†ï¼š  
 
 1.SpringBoot  
 2.SpringSecurity  
 3.MyBatis  
-4.²¿·Ö½Ó¿Ú×ñÑ­Restful·ç¸ñ  
+4.éƒ¨åˆ†æ¥å£éµå¾ªRestfulé£æ ¼  
 5.MySQL  
 
-## Ç°¶Ë¼¼ÊõÕ»
+## å‰ç«¯æŠ€æœ¯æ ˆ
 
-Ç°¶ËÖ÷Òª²ÉÓÃÁË£º  
+å‰ç«¯ä¸»è¦é‡‡ç”¨äº†ï¼š  
 
 1.Vue  
 2.axios  
@@ -51,39 +51,39 @@ V²¿ÂäÊÇÒ»¸ö¶àÓÃ»§²©¿Í¹ÜÀíÆ½Ì¨£¬²ÉÓÃVue+SpringBoot¿ª·¢¡£
 5.mavon-editor  
 6.vue-router  
 
-»¹ÓĞÆäËûÒ»Ğ©ËöËéµÄ¼¼ÊõÎÒ¾Í²»ÔÚÕâÀïÒ»Ò»ÁĞ¾ÙÁË¡£   
+è¿˜æœ‰å…¶ä»–ä¸€äº›çç¢çš„æŠ€æœ¯æˆ‘å°±ä¸åœ¨è¿™é‡Œä¸€ä¸€åˆ—ä¸¾äº†ã€‚   
 
-# ¿ìËÙÔËĞĞ  
+# å¿«é€Ÿè¿è¡Œ  
 
-1.¿ËÂ¡±¾ÏîÄ¿µ½±¾µØ  
+1.å…‹éš†æœ¬é¡¹ç›®åˆ°æœ¬åœ°  
 
 ```
 git@github.com:lenve/VBlog.git
 ```  
 
-2.ÕÒµ½blogserverÏîÄ¿ÖĞresourcesÄ¿Â¼ÏÂµÄvueblog.sqlÎÄ¼ş£¬ÔÚMySQLÊı¾İ¿âÖĞÖ´ĞĞ  
-3.¸ù¾İ×Ô¼º±¾µØÇé¿öĞŞ¸ÄÊı¾İ¿âÅäÖÃ£¬Êı¾İ¿âÅäÖÃÔÚSpringBootÏîÄ¿µÄapplication.propertiesÖĞ  
-4.ÔÚIntelliJ IDEAÖĞÔËĞĞblogserverÏîÄ¿  
+2.æ‰¾åˆ°blogserveré¡¹ç›®ä¸­resourcesç›®å½•ä¸‹çš„vueblog.sqlæ–‡ä»¶ï¼Œåœ¨MySQLæ•°æ®åº“ä¸­æ‰§è¡Œ  
+3.æ ¹æ®è‡ªå·±æœ¬åœ°æƒ…å†µä¿®æ”¹æ•°æ®åº“é…ç½®ï¼Œæ•°æ®åº“é…ç½®åœ¨SpringBooté¡¹ç›®çš„application.propertiesä¸­  
+4.åœ¨IntelliJ IDEAä¸­è¿è¡Œblogserveré¡¹ç›®  
 
-**OK£¬ÖÁ´Ë£¬·şÎñ¶Ë¾ÍÆô¶¯³É¹¦ÁË**  
+**OKï¼Œè‡³æ­¤ï¼ŒæœåŠ¡ç«¯å°±å¯åŠ¨æˆåŠŸäº†**  
 
-5.½øÈëµ½vueblogÄ¿Â¼ÖĞ£¬ÔÚ¿ØÖÆÌ¨ÒÀ´ÎÊäÈëÈçÏÂÃüÁî£º  
+5.è¿›å…¥åˆ°vueblogç›®å½•ä¸­ï¼Œåœ¨æ§åˆ¶å°ä¾æ¬¡è¾“å…¥å¦‚ä¸‹å‘½ä»¤ï¼š  
 
 ```
-# °²×°ÒÀÀµ
+# å®‰è£…ä¾èµ–
 npm install
 
-# ÔÚ localhost:8080 Æô¶¯ÏîÄ¿
+# åœ¨ localhost:8080 å¯åŠ¨é¡¹ç›®
 npm run dev
 ```  
 
-ÏîÄ¿Æô¶¯Ö®ºó£¬ÔÚä¯ÀÀÆ÷ÖĞÊäÈëhttp://localhost:8080¾Í¿ÉÒÔ·ÃÎÊÁË¡£  
+é¡¹ç›®å¯åŠ¨ä¹‹åï¼Œåœ¨æµè§ˆå™¨ä¸­è¾“å…¥http://localhost:8080å°±å¯ä»¥è®¿é—®äº†ã€‚  
 
 
-**²½Öè5ÖĞĞèÒª´ó¼Ò¶ÔNodeJS¡¢NPMµÈÓĞÒ»¶¨µÄÊ¹ÓÃ¾­Ñé£¬²»ÊìÏ¤µÄĞ¡»ï°é¿ÉÒÔÏÈ×ÔĞĞËÑË÷Ñ§Ï°ÏÂ£¬ÍÆ¼öVue[¹Ù·½½Ì³Ì](https://cn.vuejs.org/v2/guide/)¡£**  
+**æ­¥éª¤5ä¸­éœ€è¦å¤§å®¶å¯¹NodeJSã€NPMç­‰æœ‰ä¸€å®šçš„ä½¿ç”¨ç»éªŒï¼Œä¸ç†Ÿæ‚‰çš„å°ä¼™ä¼´å¯ä»¥å…ˆè‡ªè¡Œæœç´¢å­¦ä¹ ä¸‹ï¼Œæ¨èVue[å®˜æ–¹æ•™ç¨‹](https://cn.vuejs.org/v2/guide/)ã€‚**  
 
 
-# ÏîÄ¿ÒÀÀµ  
+# é¡¹ç›®ä¾èµ–  
 
 1.[vue-echarts](https://github.com/Justineo/vue-echarts)  
 2.[mavonEditor](https://github.com/hinesboy/mavonEditor)  
@@ -92,8 +92,8 @@ npm run dev
 
 MIT
 
-**»¶Ó­Ğ¡»ï°éÃÇstar¡¢fork¡£**  
+**æ¬¢è¿å°ä¼™ä¼´ä»¬starã€forkã€‚**  
 
-¹Ø×¢¹«ÖÚºÅ²é¿´¸ü¶àÈ«Õ»×ÊÁÏ£º  
+å…³æ³¨å…¬ä¼—å·æŸ¥çœ‹æ›´å¤šå…¨æ ˆèµ„æ–™ï¼š  
 
-![¹«ÖÚºÅ¶şÎ¬Âë](https://raw.githubusercontent.com/lenve/VBlog/master/doc/qrcode.jpg)  
+![å…¬ä¼—å·äºŒç»´ç ](https://raw.githubusercontent.com/lenve/VBlog/master/doc/qrcode.jpg)  
