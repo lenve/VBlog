@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.boot:spring-boot-starter-jdbc:1.5.10.RELEASE">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-jdbc/1.5.10.RELEASE/spring-boot-starter-jdbc-1.5.10.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-jdbc/1.5.10.RELEASE/spring-boot-starter-jdbc-1.5.10.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-jdbc/1.5.10.RELEASE/spring-boot-starter-jdbc-1.5.10.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
