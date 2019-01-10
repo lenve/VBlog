@@ -40,7 +40,7 @@
           <el-button @click="saveBlog(0)">保存到草稿箱</el-button>
           <el-button type="primary" @click="saveBlog(1)">发表文章</el-button>
         </template>
-        <template v-else="from==post">
+        <template v-else-if="from==post">
           <el-button type="primary" @click="saveBlog(1)">保存修改</el-button>
         </template>
       </div>

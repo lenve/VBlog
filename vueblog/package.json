@@ -66,5 +66,18 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".postcssrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifofafk/VBlog.git"
+  },
+  "keywords": [
+    ""
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifofafk/VBlog/issues"
+  },
+  "homepage": "https://github.com/ifofafk/VBlog#readme"
 }

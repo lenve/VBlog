@@ -59,7 +59,7 @@
               trigger="click" v-loading="eploading[index]">
               <el-select v-model="roles" :key="user.id" multiple placeholder="请选择" size="mini">
                 <el-option
-                  v-for="(item,index) in allRoles"
+                  v-for="(item, index) in allRoles"
                   :key="user.id+'-'+item.id"
                   :label="item.name"
                   :value="item.id">
