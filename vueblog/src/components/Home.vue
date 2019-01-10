@@ -61,6 +61,7 @@
     methods: {
       handleCommand(command){
         var _this = this;
+        // 目前只做了注销登录
         if (command == 'logout') {
           this.$confirm('注销登录吗?', '提示', {
             confirmButtonText: '确定',
@@ -73,6 +74,14 @@
           }, function () {
             //取消
           })
+        } else if (command == 'sysMsg') {
+          console.log('jump sysMsg')
+        } else if (command == 'MyArticle') {
+          console.log('jump MyArticle')
+        } else if (command == 'MyHome') {
+          console.log('jump MyHome')
+        } else {
+          console.log('do nothing')
         }
       }
     },

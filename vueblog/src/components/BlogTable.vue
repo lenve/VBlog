@@ -34,7 +34,9 @@
       <el-table-column
         label="标题"
         width="400" align="left">
-        <template slot-scope="scope"><span style="color: #409eff;cursor: pointer" @click="itemClick(scope.row)">{{ scope.row.title}}</span>
+        <!-- 添加超长标题缩短+省略号 -->
+        <template slot-scope="scope"><span style="color: #409eff;cursor: pointer;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" @click="itemClick(scope.row)">{{ scope.row.title}}</span>
         </template>
       </el-table-column>
       <el-table-column
