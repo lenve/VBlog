@@ -106,6 +106,8 @@ MIT
 
 **欢迎小伙伴们star、fork。**  
 
-关注公众号查看更多全栈资料：  
+## 其他
 
-![公众号二维码](https://raw.githubusercontent.com/lenve/VBlog/master/doc/qrcode.jpg)  
+关注公众号**牧码小子**，专注于 Spring Boot+微服务，定期视频教程分享，关注后回复 Java ，领取松哥为你精心准备的 Java 干货！
+
+![公众号二维码](http://www.javaboy.org/images/sb/javaboy.jpg)  
