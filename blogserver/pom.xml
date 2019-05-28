@@ -6,7 +6,7 @@
 	<groupId>org.sang</groupId>
 	<artifactId>blogserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>blogserver</name>
 	<description>Vue博客服务端</description>
