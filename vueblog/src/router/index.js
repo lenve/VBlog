@@ -8,7 +8,7 @@ import DataCharts from '@/components/DataCharts'
 import PostArticle from '@/components/PostArticle'
 import UserMana from '@/components/UserMana'
 import BlogDetail from '@/components/BlogDetail'
-
+import Signin from '@/components/SignIn'
 Vue.use(Router)
 
 export default new Router({
@@ -19,6 +19,11 @@ export default new Router({
       hidden: true,
       component: Login
     }, {
+      path:'/signin',
+      name:'注册',
+      hidden:true,
+      component:Signin
+    },{
       path: '/home',
       name: '',
       component: Home,

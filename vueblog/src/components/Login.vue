@@ -9,6 +9,8 @@
       <el-input type="password" v-model="loginForm.password" auto-complete="off" placeholder="密码"></el-input>
     </el-form-item>
     <el-checkbox class="login_remember" v-model="checked" label-position="left">记住密码</el-checkbox>
+    <!-- <el-button class="signin" type="text">注册</el-button> -->
+    <el-link class="signin" v-on:click="Sign_In" type="primary">注册</el-link>
     <el-form-item style="width: 100%">
       <el-button type="primary" @click.native.prevent="submitClick" style="width: 100%">登录</el-button>
     </el-form-item>
@@ -32,6 +34,11 @@
         loading: false
       }
     },
+     mounted: function (){
+       var _this = this;
+       _this.loginForm.username = _this.$route.query.username===undefined?"sang":_this.$route.query.username;
+       _this.loginForm.password = _this.$route.query.password===undefined?"123":_this.$route.query.password;
+     },
     methods: {
       submitClick: function () {
         var _this = this;
@@ -57,11 +64,16 @@
           _this.loading = false;
           _this.$alert('找不到服务器⊙﹏⊙∥!', '失败!');
         });
+      },
+      Sign_In:function(){
+        var _this = this;
+        _this.$router.replace({path: '/signin'});
       }
     }
   }
 </script>
 <style>
+@import url("//unpkg.com/element-ui@2.8.2/lib/theme-chalk/index.css");
   .login-container {
     border-radius: 15px;
     background-clip: padding-box;
@@ -82,5 +94,9 @@
   .login_remember {
     margin: 0px 0px 35px 0px;
     text-align: left;
+  }
+
+  .signin{
+    margin: 0px 0px 2px 30px;
   }
 </style>

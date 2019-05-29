@@ -7,7 +7,7 @@
         SELECT * FROM user WHERE username=#{username}
     </select>
     <insert id="reg" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO user set username=#{username},password=#{password},nickname=#{nickname}
+       INSERT INTO user set username=#{username},password=#{password},nickname=#{nickname},email=#{email}
     </insert>
     <update id="updateUserEmail">
         UPDATE user set email=#{email} WHERE id=#{id}
