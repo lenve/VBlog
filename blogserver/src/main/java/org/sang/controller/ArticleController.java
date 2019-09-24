@@ -93,6 +93,14 @@ public class ArticleController {
         return new RespBean("error", "删除失败!");
     }
 
+    @RequestMapping(value = "/restore", method = RequestMethod.PUT)
+    public RespBean restoreArticle(Integer articleId) {
+        if (articleService.restoreArticle(articleId) == 1) {
+            return new RespBean("success", "还原成功!");
+        }
+        return new RespBean("error", "还原失败!");
+    }
+
     @RequestMapping("/dataStatistics")
     public Map<String,Object> dataStatistics() {
         Map<String, Object> map = new HashMap<>();
