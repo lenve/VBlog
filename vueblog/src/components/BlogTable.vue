@@ -59,6 +59,10 @@
           </el-button>
           <el-button
             size="mini"
+            @click="handleRestore(scope.$index, scope.row)" v-if="showRestore">还原
+          </el-button>
+          <el-button
+            size="mini"
             type="danger"
             @click="handleDelete(scope.$index, scope.row)" v-if="showDelete">删除
           </el-button>
@@ -168,6 +172,33 @@
         this.dustbinData.push(row.id);
         this.deleteToDustBin(row.state);
       },
+      handleRestore(index, row) {
+        let _this = this;
+        this.$confirm('将该文件还原到原处，是否继续？','提示',{
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        } ).then(() => {
+          _this.loading = true;
+          putRequest('/article/restore', {articleId: row.id}).then(resp=> {
+            if (resp.status == 200) {
+              var data = resp.data;
+              _this.$message({type: data.status, message: data.msg});
+              if (data.status == 'success') {
+                window.bus.$emit('blogTableReload')//通过选项卡都重新加载数据
+              }
+            } else {
+              _this.$message({type: 'error', message: '还原失败!'});
+            }
+            _this.loading = false;
+          });
+        }).catch(() => {
+          _this.$message({
+            type: 'info',
+            message: '已取消还原'
+          });
+        });
+      },
       deleteToDustBin(state){
         var _this = this;
         this.$confirm(state != 2 ? '将该文件放入回收站，是否继续?' : '永久删除该文件, 是否继续?', '提示', {
@@ -208,6 +239,6 @@
         });
       }
     },
-    props: ['state', 'showEdit', 'showDelete', 'activeName']
+    props: ['state', 'showEdit', 'showDelete', 'activeName', 'showRestore']
   }
 </script>
