@@ -36,7 +36,13 @@ public class CategoryController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public RespBean addNewCate(Category category) {
+
+        if ("".equals(category.getCateName()) || category.getCateName() == null) {
+            return new RespBean("error", "请输入栏目名称!");
+        }
+
         int result = categoryService.addCategory(category);
+
         if (result == 1) {
             return new RespBean("success", "添加成功!");
         }

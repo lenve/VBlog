@@ -113,6 +113,10 @@ public class ArticleService {
         }
     }
 
+    public int restoreArticle(Integer articleId) {
+        return articleMapper.updateArticleStateById(articleId, 1); // 从回收站还原在原处
+    }
+
     public Article getArticleById(Long aid) {
         Article article = articleMapper.getArticleById(aid);
         articleMapper.pvIncrement(aid);
