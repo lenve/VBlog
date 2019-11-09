@@ -3,3 +3,4 @@
 *.js linguist-language=Java
 *.html linguist-language=Java
 *.vue linguist-language=Java
+*.xml linguist-language=Java
