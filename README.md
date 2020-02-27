@@ -2,6 +2,8 @@
 
 ![](http://www.javaboy.org/images/weixin.png)
 
+V 部落姊妹篇：[https://github.com/lenve/vhr](https://github.com/lenve/vhr)
+
 V部落是一个多用户博客管理平台，采用Vue+SpringBoot开发。  
 
 项目演示地址： [http://45.77.146.32:8081/index.html](http://45.77.146.32:8081/index.html)  
