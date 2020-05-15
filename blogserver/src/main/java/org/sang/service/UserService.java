@@ -2,6 +2,7 @@ package org.sang.service;
 
 import org.sang.bean.Role;
 import org.sang.bean.User;
+import org.sang.config.MyPasswordEncoder;
 import org.sang.mapper.RolesMapper;
 import org.sang.mapper.UserMapper;
 import org.sang.utils.Util;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
@@ -25,6 +27,8 @@ public class UserService implements UserDetailsService {
     UserMapper userMapper;
     @Autowired
     RolesMapper rolesMapper;
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
@@ -51,7 +55,7 @@ public class UserService implements UserDetailsService {
             return 1;
         }
         //插入用户,插入之前先对密码进行加密
-        user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(true);//用户可用
         long result = userMapper.reg(user);
         //配置用户的角色，默认都是普通用户
