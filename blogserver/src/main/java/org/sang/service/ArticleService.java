@@ -118,8 +118,8 @@ public class ArticleService {
     }
 
     public Article getArticleById(Long aid) {
+		articleMapper.pvIncrement(aid); // 点击文章查看详情的时候浏览数先加1
         Article article = articleMapper.getArticleById(aid);
-        articleMapper.pvIncrement(aid);
         return article;
     }
 
