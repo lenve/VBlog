@@ -13,7 +13,7 @@
     "axios": "^0.17.1",
     "element-ui": "^2.0.8",
     "font-awesome": "^4.7.0",
-    "mavon-editor": "^2.4.13",
+    "mavon-editor": "^2.8.2",
     "vue": "^2.5.2",
     "vue-echarts": "^2.6.0",
     "vue-router": "^3.0.1"
