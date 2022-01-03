@@ -1,6 +1,7 @@
+[![Maintainability](https://cloud.quality-gate.com/dashboard/api/badge?projectName=lenve_VBlog&branchName=master)](https://cloud.quality-gate.com/dashboard/branches/279556#overview)
+
 扫码加微信（微信ID：**a_java_boy2**），备注V部落，进群讨论。
 
-![](https://user-images.githubusercontent.com/6023444/75459026-ba70d500-59b9-11ea-8cbd-3d5889f356c4.png)
 
 V 部落姊妹篇：[https://github.com/lenve/vhr](https://github.com/lenve/vhr)
 
