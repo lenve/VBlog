@@ -5,7 +5,6 @@ import org.sang.mapper.CategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import java.util.List;
 @Service
 @Transactional
 public class CategoryService {
+
     @Autowired
     CategoryMapper categoryMapper;
 
