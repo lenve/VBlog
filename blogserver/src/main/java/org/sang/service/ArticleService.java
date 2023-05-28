@@ -7,7 +7,6 @@ import org.sang.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -18,8 +17,10 @@ import java.util.List;
 @Service
 @Transactional
 public class ArticleService {
+
     @Autowired
     ArticleMapper articleMapper;
+
     @Autowired
     TagsMapper tagsMapper;
 
@@ -90,31 +91,32 @@ public class ArticleService {
         return content;
     }
 
-    public List<Article> getArticleByState(Integer state, Integer page, Integer count,String keywords) {
+    public List<Article> getArticleByState(Integer state, Integer page, Integer count, String keywords) {
         int start = (page - 1) * count;
         Long uid = Util.getCurrentUser().getId();
-        return articleMapper.getArticleByState(state, start, count, uid,keywords);
+        return articleMapper.getArticleByState(state, start, count, uid, keywords);
     }
 
-//    public List<Article> getArticleByStateByAdmin(Integer page, Integer count,String keywords) {
-//        int start = (page - 1) * count;
-//        return articleMapper.getArticleByStateByAdmin(start, count,keywords);
-//    }
-
-    public int getArticleCountByState(Integer state, Long uid,String keywords) {
-        return articleMapper.getArticleCountByState(state, uid,keywords);
+    //    public List<Article> getArticleByStateByAdmin(Integer page, Integer count,String keywords) {
+    //        int start = (page - 1) * count;
+    //        return articleMapper.getArticleByStateByAdmin(start, count,keywords);
+    //    }
+    public int getArticleCountByState(Integer state, Long uid, String keywords) {
+        return articleMapper.getArticleCountByState(state, uid, keywords);
     }
 
     public int updateArticleState(Long[] aids, Integer state) {
         if (state == 2) {
             return articleMapper.deleteArticleById(aids);
         } else {
-            return articleMapper.updateArticleState(aids, 2);//放入到回收站中
+            //放入到回收站中
+            return articleMapper.updateArticleState(aids, 2);
         }
     }
 
     public int restoreArticle(Integer articleId) {
-        return articleMapper.updateArticleStateById(articleId, 1); // 从回收站还原在原处
+        // 从回收站还原在原处
+        return articleMapper.updateArticleStateById(articleId, 1);
     }
 
     public Article getArticleById(Long aid) {

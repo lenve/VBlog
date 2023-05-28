@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +12,23 @@ import java.util.List;
  * Created by sang on 2017/12/17.
  */
 public class User implements UserDetails {
+
     private Long id;
+
     private String username;
+
     private String password;
+
     private String nickname;
+
     private boolean enabled;
+
     private List<Role> roles;
+
     private String email;
+
     private String userface;
+
     private Timestamp regTime;
 
     public Timestamp getRegTime() {
@@ -70,19 +78,19 @@ public class User implements UserDetails {
     @Override
     @JsonIgnore
     public boolean isAccountNonExpired() {
-        return true;
+        return isValid();
     }
 
     @Override
     @JsonIgnore
     public boolean isAccountNonLocked() {
-        return true;
+        return isValid();
     }
 
     @Override
     @JsonIgnore
     public boolean isCredentialsNonExpired() {
-        return true;
+        return isValid();
     }
 
     @Override
@@ -108,7 +116,6 @@ public class User implements UserDetails {
         this.username = username;
     }
 
-
     public String getPassword() {
         return password;
     }
@@ -123,5 +130,9 @@ public class User implements UserDetails {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    private boolean isValid() {
+        return true;
     }
 }

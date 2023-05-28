@@ -8,7 +8,6 @@ import org.sang.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,13 +51,7 @@ public class ArticleController {
         if (!imgFolder.exists()) {
             imgFolder.mkdirs();
         }
-        url.append(req.getScheme())
-                .append("://")
-                .append(req.getServerName())
-                .append(":")
-                .append(req.getServerPort())
-                .append(req.getContextPath())
-                .append(filePath);
+        url.append(req.getScheme()).append("://").append(req.getServerName()).append(":").append(req.getServerPort()).append(req.getContextPath()).append(filePath);
         String imgName = UUID.randomUUID() + "_" + image.getOriginalFilename().replaceAll(" ", "");
         try {
             IOUtils.write(image.getBytes(), new FileOutputStream(new File(imgFolder, imgName)));
@@ -71,9 +64,9 @@ public class ArticleController {
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public Map<String, Object> getArticleByState(@RequestParam(value = "state", defaultValue = "-1") Integer state, @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "count", defaultValue = "6") Integer count,String keywords) {
-        int totalCount = articleService.getArticleCountByState(state, Util.getCurrentUser().getId(),keywords);
-        List<Article> articles = articleService.getArticleByState(state, page, count,keywords);
+    public Map<String, Object> getArticleByState(@RequestParam(value = "state", defaultValue = "-1") Integer state, @RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "count", defaultValue = "6") Integer count, String keywords) {
+        int totalCount = articleService.getArticleCountByState(state, Util.getCurrentUser().getId(), keywords);
+        List<Article> articles = articleService.getArticleByState(state, page, count, keywords);
         Map<String, Object> map = new HashMap<>();
         map.put("totalCount", totalCount);
         map.put("articles", articles);
@@ -102,7 +95,7 @@ public class ArticleController {
     }
 
     @RequestMapping("/dataStatistics")
-    public Map<String,Object> dataStatistics() {
+    public Map<String, Object> dataStatistics() {
         Map<String, Object> map = new HashMap<>();
         List<String> categories = articleService.getCategories();
         List<Integer> dataStatistics = articleService.getDataStatistics();

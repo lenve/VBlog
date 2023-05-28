@@ -6,8 +6,11 @@ import java.sql.Timestamp;
  * Created by sang on 2017/12/19.
  */
 public class Category {
+
     private Long id;
+
     private String cateName;
+
     private Timestamp date;
 
     public Category() {

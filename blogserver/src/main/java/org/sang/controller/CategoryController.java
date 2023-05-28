@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 /**
@@ -17,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin/category")
 public class CategoryController {
+
     @Autowired
     CategoryService categoryService;
 
@@ -36,13 +36,10 @@ public class CategoryController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public RespBean addNewCate(Category category) {
-
         if ("".equals(category.getCateName()) || category.getCateName() == null) {
             return new RespBean("error", "请输入栏目名称!");
         }
-
         int result = categoryService.addCategory(category);
-
         if (result == 1) {
             return new RespBean("success", "添加成功!");
         }

@@ -2,7 +2,6 @@ package org.sang.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 
 /**
@@ -10,6 +9,7 @@ import java.util.List;
  */
 @Mapper
 public interface TagsMapper {
+
     int deleteTagsByAid(Long aid);
 
     int saveTags(@Param("tags") String[] tags);

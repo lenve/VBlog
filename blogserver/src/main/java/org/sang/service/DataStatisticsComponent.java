@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DataStatisticsComponent {
+
     @Autowired
     ArticleService articleService;
 

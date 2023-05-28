@@ -15,6 +15,7 @@ import org.springframework.util.DigestUtils;
  */
 @Component
 public class MyPasswordEncoder implements PasswordEncoder {
+
     @Override
     public String encode(CharSequence rawPassword) {
         return DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes());
