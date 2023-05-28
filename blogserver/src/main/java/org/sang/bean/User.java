@@ -78,19 +78,19 @@ public class User implements UserDetails {
     @Override
     @JsonIgnore
     public boolean isAccountNonExpired() {
-        return true;
+        return isValid();
     }
 
     @Override
     @JsonIgnore
     public boolean isAccountNonLocked() {
-        return true;
+        return isValid();
     }
 
     @Override
     @JsonIgnore
     public boolean isCredentialsNonExpired() {
-        return true;
+        return isValid();
     }
 
     @Override
@@ -130,5 +130,9 @@ public class User implements UserDetails {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    private boolean isValid() {
+        return true;
     }
 }
